@@ -1,12 +1,9 @@
 #include "main.h"
 
-
 /**
- * print_numbers -  Fuction for printing 0 -9
+ * print_numbers - prints numbers 0-9
  *
- * Description: Printing 0 - 9
- *
- * Return: Always return 0
+ * Return: void
  */
 
 void print_numbers(void)
