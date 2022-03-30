@@ -1,28 +1,34 @@
 #include "main.h"
 
 /**
- * _sqrt_recursion - main funct
- * @n: int n
- * Return: int
+ * is_prime - detects if an input number is a prime number.
+ * @n: input number.
+ * @c: iterator.
+ * Return: 1 if n is a prime number. 0 if n is not a prime number.
  */
-int _sqrt_recursion(int n)
+int is_prime(unsigned int n, unsigned int c)
 {
-	return (_sqrt(n, 1));
+	if (n % c == 0)
+	{
+		if (n == c)
+			return (1);
+		else
+			return (0);
+	}
+	return (0 + is_prime(n, c + 1));
 }
-
 /**
- * _sqrt - _sqrt_recursion
- * @n: integer paramtr
- * @i: integer parameter
- * Return: sqrt
+ * is_prime_number - detects if an input number is a prime number.
+ * @n: input number.
+ * Return: 1 if n is a prime number. 0 if n is not a prime number.
  */
-int _sqrt(int n, int i)
+int is_prime_number(int n)
 {
+	if (n == 0)
+		return (0);
 	if (n < 0)
-		return (-1);
-	if ((i * i) > n)
-		return (-1);
-	if (i * i == n)
-		return (i);
-	return (_sqrt(n, i + 1));
+		return (0);
+	if (n == 1)
+		return (0);
+	return (is_prime(n, 2));
 }
